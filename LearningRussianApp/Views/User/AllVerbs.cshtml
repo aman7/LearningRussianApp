@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Verb>
+<p>list all the Nouns.</p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                руский
+            </th>
+            <th>
+                English
+            </th>
+
+            @*<th>
+                    @Html.DisplayNameFor(model => model.r1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.r2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.r3)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.r4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.r5)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.r6)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.r7)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.r8)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.r9)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.r10)
+                </th>*@
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="AddUpdateVerb" asp-route-id="@item.id">     @Html.DisplayFor(modelItem => item.russWord)</a>
+                </td>
+                <td>
+                    <a asp-action="AddUpdateVerb" asp-route-id="@item.id">  @Html.DisplayFor(modelItem => item.engWord) </a>
+                </td>
+
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.r1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.r2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.r3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.r4)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.r5)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.r6)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.r7)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.r8)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.r9)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.r10)
+                    </td>
+                *@
+                
+            </tr>
+        }
+    </tbody>
+</table>

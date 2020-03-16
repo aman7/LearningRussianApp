@@ -1,0 +1,86 @@
+﻿@model Noun
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="AddUpdateNoun">
+            <input type="hidden" asp-for="id" />
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="russWord" class="control-label"></label>
+                    <input asp-for="russWord" class="form-control" />
+                    <span asp-validation-for="russWord" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="engWord" class="control-label"></label>
+                    <input asp-for="engWord" class="form-control" />
+                    <span asp-validation-for="engWord" class="text-danger"></span>
+                </div>
+            </div>
+            @*<div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="r1" class="control-label"></label>
+                    <input asp-for="r1" class="form-control" />
+                    <span asp-validation-for="r1" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="r2" class="control-label"></label>
+                    <input asp-for="r2" class="form-control" />
+                    <span asp-validation-for="r2" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="r3" class="control-label"></label>
+                    <input asp-for="r3" class="form-control" />
+                    <span asp-validation-for="r3" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label asp-for="r4" class="control-label"></label>
+                    <input asp-for="r4" class="form-control" />
+                    <span asp-validation-for="r4" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="r5" class="control-label"></label>
+                    <input asp-for="r5" class="form-control" />
+                    <span asp-validation-for="r5" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="r6" class="control-label"></label>
+                    <input asp-for="r6" class="form-control" />
+                    <span asp-validation-for="r6" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="r7" class="control-label"></label>
+                    <input asp-for="r7" class="form-control" />
+                    <span asp-validation-for="r7" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="r8" class="control-label"></label>
+                    <input asp-for="r8" class="form-control" />
+                    <span asp-validation-for="r8" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="r9" class="control-label"></label>
+                    <input asp-for="r9" class="form-control" />
+                    <span asp-validation-for="r9" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="r10" class="control-label"></label>
+                    <input asp-for="r10" class="form-control" />
+                    <span asp-validation-for="r10" class="text-danger"></span>
+                </div>
+            </div>*@
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+                </div>
+                <div class="form-group col-md-6">
+                    <a asp-action="AllNouns" class="btn btn-secondary btn-block"><i class="fa fa-table"></i> All Nouns</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
