@@ -43,7 +43,9 @@ namespace LearningRussianApp.Controllers
                 //if (Noun.id == 0)
                 //    _methods.AddNoun(Noun);
                 //else
-                    _methods.updateNoun(Noun);
+                Noun.status = "Finished";
+                Noun.reviewDate = DateTime.Now.AddDays(4);
+                _methods.updateNoun(Noun);
             }
             return RedirectToAction(nameof(AllNouns));
 
@@ -72,7 +74,9 @@ namespace LearningRussianApp.Controllers
                 //if (Verb.id == 0)
                 //    _methods.AddVerb(Verb);
                 //else
-                    _methods.updateVerb(Verb);
+                Verb.status = "Finished";
+                Verb.reviewDate = DateTime.Now.AddDays(4);
+                _methods.updateVerb(Verb);
             }
             return RedirectToAction(nameof(AllVerbs));
 
