@@ -51,9 +51,29 @@ namespace LearningRussianApp.Repository
             return _context.verbs.FirstOrDefault(i => i.id == id);
         }
 
+        public IEnumerable<Noun> GetAllNonFinishedNouns()
+        {
+            return _context.nouns.Where(s => s.status != "Finished").ToList();
+        }
+
+        public IEnumerable<Verb> GetAllNonFinishedVerbs()
+        {
+            return _context.verbs.Where(s => s.status != "Finished").ToList();
+        }
+
         public IEnumerable<Noun> GetAllNouns()
         {
             return _context.nouns.ToList();
+        }
+
+        public IEnumerable<Noun> GetAllReviewNouns()
+        {
+            return _context.nouns.Where(s => s.status == "Finished" && s.reviewDate <= DateTime.Now).ToList();
+        }
+
+        public IEnumerable<Verb> GetAllReviewVerbs()
+        {
+            return _context.verbs.Where(s => s.status == "Finished" && s.reviewDate <= DateTime.Now).ToList();
         }
 
         public IEnumerable<Verb> GetAllVerbs()

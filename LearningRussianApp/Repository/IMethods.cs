@@ -10,12 +10,16 @@ namespace LearningRussianApp.Repository
     public interface IMethods
     {
         IEnumerable<Noun> GetAllNouns();
+        IEnumerable<Noun> GetAllNonFinishedNouns();
+        IEnumerable<Noun> GetAllReviewNouns();
         Noun findNoun(int id);
         void AddNoun(Noun newNoun);
         void updateNoun(Noun Noun);
         void deleteNoun(int id);
 
         IEnumerable<Verb> GetAllVerbs();
+        IEnumerable<Verb> GetAllNonFinishedVerbs();
+        IEnumerable<Verb> GetAllReviewVerbs();
         Verb findVerb(int id);
         void AddVerb(Verb newVerb);
         void updateVerb(Verb Verb);

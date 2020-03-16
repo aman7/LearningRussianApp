@@ -24,7 +24,12 @@ namespace LearningRussianApp.Controllers
         }
         public IActionResult AllNouns()
         {
-            return View(_methods.GetAllNouns());
+            return View(_methods.GetAllNonFinishedNouns());
+        }
+
+        public IActionResult ReviewNouns()
+        {
+            return View(_methods.GetAllReviewNouns());
         }
 
 
@@ -55,7 +60,12 @@ namespace LearningRussianApp.Controllers
 
         public IActionResult AllVerbs()
         {
-            return View(_methods.GetAllVerbs());
+            return View(_methods.GetAllNonFinishedVerbs());
+        }
+
+        public IActionResult ReviewVerbs()
+        {
+            return View(_methods.GetAllReviewVerbs());
         }
 
 
