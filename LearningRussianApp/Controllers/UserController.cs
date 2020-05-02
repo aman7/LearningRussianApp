@@ -56,6 +56,29 @@ namespace LearningRussianApp.Controllers
 
         }
 
+        public IActionResult AddUpdateNounReview(int id)
+        {
+            //if (id == 0)
+            //    return View(new Noun());
+            //else
+            return View(_methods.findNoun(id));
+        }
+        [HttpPost]
+        public IActionResult AddUpdateNounReview(Noun Noun)
+        {
+            if (ModelState.IsValid)
+            {
+                //if (Noun.id == 0)
+                //    _methods.AddNoun(Noun);
+                //else
+                Noun.status = "Finished";
+                Noun.reviewDate = DateTime.Now.AddDays(4);
+                _methods.updateNoun(Noun);
+            }
+            return RedirectToAction(nameof(ReviewNouns));
+
+        }
+
 
 
         public IActionResult AllVerbs()
@@ -89,6 +112,29 @@ namespace LearningRussianApp.Controllers
                 _methods.updateVerb(Verb);
             }
             return RedirectToAction(nameof(AllVerbs));
+
+        }
+
+        public IActionResult AddUpdateVerbReview(int id)
+        {
+            //if (id == 0)
+            //    return View(new Verb());
+            //else
+            return View(_methods.findVerb(id));
+        }
+        [HttpPost]
+        public IActionResult AddUpdateVerbReview(Verb Verb)
+        {
+            if (ModelState.IsValid)
+            {
+                //if (Verb.id == 0)
+                //    _methods.AddVerb(Verb);
+                //else
+                Verb.status = "Finished";
+                Verb.reviewDate = DateTime.Now.AddDays(4);
+                _methods.updateVerb(Verb);
+            }
+            return RedirectToAction(nameof(ReviewVerbs));
 
         }
 

@@ -1,0 +1,131 @@
+﻿@model Verb
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="AddUpdateVerbReview">
+            <input type="hidden" asp-for="id" />
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="russWord" class="control-label"></label>
+                    <input asp-for="russWord" class="form-control" readonly="readonly" />
+                    <span asp-validation-for="russWord" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="engWord" class="control-label"></label>
+                    <input asp-for="engWord" class="form-control" readonly="readonly" />
+                    <span asp-validation-for="engWord" class="text-danger"></span>
+                </div>
+            </div>
+            <div>
+                <p>Present Tense</p>
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    <label asp-for="p1" class="control-label">я</label>
+                    <input asp-for="p1" class="form-control" />
+                    <span asp-validation-for="p1" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="p2" class="control-label">ты</label>
+                    <input asp-for="p2" class="form-control" />
+                    <span asp-validation-for="p2" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="p3" class="control-label">он, она, оно</label>
+                    <input asp-for="p3" class="form-control" />
+                    <span asp-validation-for="p3" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label asp-for="p4" class="control-label">мы</label>
+                    <input asp-for="p4" class="form-control" />
+                    <span asp-validation-for="p4" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="p5" class="control-label">вы</label>
+                    <input asp-for="p5" class="form-control" />
+                    <span asp-validation-for="p5" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="p6" class="control-label">они</label>
+                    <input asp-for="p6" class="form-control" />
+                    <span asp-validation-for="p6" class="text-danger"></span>
+                </div>
+            </div>
+            <div>
+                <p>Past Tense</p>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="ps1" class="control-label">я, ты, он</label>
+                    <input asp-for="ps1" class="form-control" />
+                    <span asp-validation-for="ps1" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="ps2" class="control-label">она</label>
+                    <input asp-for="ps2" class="form-control" />
+                    <span asp-validation-for="ps2" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="ps3" class="control-label">оно</label>
+                    <input asp-for="ps3" class="form-control" />
+                    <span asp-validation-for="ps3" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="ps4" class="control-label">мы, вы, они</label>
+                    <input asp-for="ps4" class="form-control" />
+                    <span asp-validation-for="ps4" class="text-danger"></span>
+                </div>
+            </div>
+            <div>
+                <p>Future Tense</p>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="f1" class="control-label">я</label>
+                    <input asp-for="f1" class="form-control" />
+                    <span asp-validation-for="f1" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="f2" class="control-label">ты</label>
+                    <input asp-for="f2" class="form-control" />
+                    <span asp-validation-for="f2" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="f3" class="control-label">он, она, оно</label>
+                    <input asp-for="f3" class="form-control" />
+                    <span asp-validation-for="f3" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="f4" class="control-label">мы</label>
+                    <input asp-for="f4" class="form-control" />
+                    <span asp-validation-for="f4" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="f5" class="control-label">вы</label>
+                    <input asp-for="f5" class="form-control" />
+                    <span asp-validation-for="f5" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="f6" class="control-label">они</label>
+                    <input asp-for="f6" class="form-control" />
+                    <span asp-validation-for="f6" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+                </div>
+                <div class="form-group col-md-6">
+                    <a asp-action="ReviewVerbs" class="btn btn-secondary btn-block"><i class="fa fa-table"></i> All Verbs</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
