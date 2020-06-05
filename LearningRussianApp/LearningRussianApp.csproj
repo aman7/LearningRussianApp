@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Admin\AllAdjectives.cshtml" />
     <Content Remove="Views\User\AddUpdateNounReview.cshtml" />
   </ItemGroup>
 
@@ -24,12 +25,19 @@
 
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Admin\AllAdjectives.cshtml" />
     <_ContentIncludedByDefault Remove="Views\User\AddUpdateNounReview.cshtml" />
   </ItemGroup>
 
 
   <ItemGroup>
+    <None Include="Views\Admin\AllAdjectives.cshtml" />
     <None Include="Views\User\AddUpdateNounReview.cshtml" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Admin\AllAdjectives.cshtml" />
   </ItemGroup>
 
 </Project>

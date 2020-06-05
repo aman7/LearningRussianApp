@@ -4,55 +4,22 @@ using LearningRussianApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LearningRussianApp.Migrations
 {
     [DbContext(typeof(LearningRussianDbContext))]
-    partial class LearningRussianDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200508064603_adding field answer")]
+    partial class addingfieldanswer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("LearningRussianApp.Models.Adjective", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("answer");
-
-                    b.Property<string>("engWord");
-
-                    b.Property<string>("fem");
-
-                    b.Property<string>("mas");
-
-                    b.Property<string>("neu");
-
-                    b.Property<string>("plu");
-
-                    b.Property<DateTime>("reviewDate");
-
-                    b.Property<string>("russWord");
-
-                    b.Property<string>("status");
-
-                    b.Property<string>("testcolumn");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("russWord")
-                        .IsUnique()
-                        .HasFilter("[russWord] IS NOT NULL");
-
-                    b.ToTable("Adjectives");
-                });
 
             modelBuilder.Entity("LearningRussianApp.Models.Noun", b =>
                 {
@@ -63,8 +30,6 @@ namespace LearningRussianApp.Migrations
                     b.Property<string>("answer");
 
                     b.Property<string>("engWord");
-
-                    b.Property<string>("gender");
 
                     b.Property<string>("r1");
 

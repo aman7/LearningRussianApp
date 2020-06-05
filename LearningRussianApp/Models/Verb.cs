@@ -30,6 +30,7 @@ namespace LearningRussianApp.Models
         public string f4 { get; set; }
         public string f5 { get; set; }
         public string f6 { get; set; }
+        public string answer { get; set; }
 
         public string status { get; set; }
         public DateTime reviewDate { get; set; }

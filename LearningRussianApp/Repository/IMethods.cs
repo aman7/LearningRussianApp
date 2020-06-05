@@ -25,6 +25,14 @@ namespace LearningRussianApp.Repository
         void updateVerb(Verb Verb);
         void deleteVerb(int id);
 
+        IEnumerable<Adjective> GetAllAdjectives();
+        IEnumerable<Adjective> GetAllNonFinishedAdjectives();
+        IEnumerable<Adjective> GetAllReviewAdjectives();
+        Adjective findAdjective(int id);
+        void AddAdjective(Adjective newAdjective);
+        void updateAdjective(Adjective Adjective);
+        void deleteAdjective(int id);
+
     }
 }
 

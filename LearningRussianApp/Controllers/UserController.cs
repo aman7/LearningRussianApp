@@ -71,8 +71,17 @@ namespace LearningRussianApp.Controllers
                 //if (Noun.id == 0)
                 //    _methods.AddNoun(Noun);
                 //else
+                if (Noun.answer == "Correct")
+                {
+                    Noun.reviewDate = DateTime.Now.AddDays(10);
+                }
+
+                if (Noun.answer == "Wrong")
+                {
+                    Noun.reviewDate = DateTime.Now.AddDays(4);
+                }
+
                 Noun.status = "Finished";
-                Noun.reviewDate = DateTime.Now.AddDays(4);
                 _methods.updateNoun(Noun);
             }
             return RedirectToAction(nameof(ReviewNouns));
@@ -130,11 +139,87 @@ namespace LearningRussianApp.Controllers
                 //if (Verb.id == 0)
                 //    _methods.AddVerb(Verb);
                 //else
+                if (Verb.answer == "Correct")
+                {
+                    Verb.reviewDate = DateTime.Now.AddDays(10);
+                }
+
+                if (Verb.answer == "Wrong")
+                {
+                    Verb.reviewDate = DateTime.Now.AddDays(4);
+                }
                 Verb.status = "Finished";
-                Verb.reviewDate = DateTime.Now.AddDays(4);
+                
                 _methods.updateVerb(Verb);
             }
             return RedirectToAction(nameof(ReviewVerbs));
+
+        }
+
+
+        public IActionResult AllAdjectives()
+        {
+            return View(_methods.GetAllNonFinishedAdjectives());
+        }
+
+        public IActionResult ReviewAdjectives()
+        {
+            return View(_methods.GetAllReviewAdjectives());
+        }
+
+
+        public IActionResult AddUpdateAdjective(int id)
+        {
+            //if (id == 0)
+            //    return View(new Adjective());
+            //else
+            return View(_methods.findAdjective(id));
+        }
+        [HttpPost]
+        public IActionResult AddUpdateAdjective(Adjective Adjective)
+        {
+            if (ModelState.IsValid)
+            {
+                //if (Adjective.id == 0)
+                //    _methods.AddAdjective(Adjective);
+                //else
+                Adjective.status = "Finished";
+                Adjective.reviewDate = DateTime.Now.AddDays(4);
+                _methods.updateAdjective(Adjective);
+            }
+            return RedirectToAction(nameof(AllAdjectives));
+
+        }
+
+        public IActionResult AddUpdateAdjectiveReview(int id)
+        {
+            //if (id == 0)
+            //    return View(new Adjective());
+            //else
+            return View(_methods.findAdjective(id));
+        }
+        [HttpPost]
+        public IActionResult AddUpdateAdjectiveReview(Adjective Adjective)
+        {
+            if (ModelState.IsValid)
+            {
+                //if (Adjective.id == 0)
+                //    _methods.AddAdjective(Adjective);
+                //else
+                if (Adjective.answer == "Correct")
+                {
+                    Adjective.reviewDate = DateTime.Now.AddDays(10);
+                }
+
+                if (Adjective.answer == "Wrong")
+                {
+                    Adjective.reviewDate = DateTime.Now.AddDays(4);
+                }
+
+                Adjective.status = "Finished";
+                _methods.updateAdjective(Adjective);
+            }
+            return RedirectToAction(nameof(ReviewAdjectives));
 
         }
 

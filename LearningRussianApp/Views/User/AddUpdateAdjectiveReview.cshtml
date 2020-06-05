@@ -1,0 +1,68 @@
+﻿@model Adjective
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="AddUpdateAdjectiveReview">
+            <input type="hidden" asp-for="id" />
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="russWord" class="control-label"></label>
+                    <input asp-for="russWord" class="form-control" readonly="readonly" />
+                    <span asp-validation-for="russWord" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="engWord" class="control-label"></label>
+                    <input asp-for="engWord" class="form-control" readonly="readonly" />
+                    <span asp-validation-for="engWord" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="mas" class="control-label"></label>
+                    <input asp-for="mas" class="form-control" />
+                    <span asp-validation-for="mas" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="fem" class="control-label"></label>
+                    <input asp-for="fem" class="form-control" />
+                    <span asp-validation-for="fem" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="neu" class="control-label"></label>
+                    <input asp-for="neu" class="form-control" />
+                    <span asp-validation-for="neu" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label asp-for="plu" class="control-label"></label>
+                    <input asp-for="plu" class="form-control" />
+                    <span asp-validation-for="plu" class="text-danger"></span>
+                </div>
+                
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4 d-block">
+
+                    <input type="radio" value="Correct" name="Answer" asp-for="answer" checked="checked" class="form-control d-inline w-25" />Correct<br />
+
+
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="radio" value="Wrong" name="Answer" asp-for="answer" class="form-control d-inline w-25" />Wrong<br />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+                </div>
+                <div class="form-group col-md-6">
+                    <a asp-action="ReviewAdjectives" class="btn btn-secondary btn-block"><i class="fa fa-table"></i> All Nouns</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

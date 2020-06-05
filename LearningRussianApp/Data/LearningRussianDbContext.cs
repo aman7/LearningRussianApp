@@ -16,6 +16,7 @@ namespace LearningRussianApp.Data
         }
         public DbSet<Noun> nouns { get; set; }
         public DbSet<Verb> verbs { get; set; }
+        public DbSet<Adjective> Adjectives { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -23,6 +24,9 @@ namespace LearningRussianApp.Data
                 .HasIndex(u => u.russWord)
                 .IsUnique();
             builder.Entity<Verb>()
+                .HasIndex(u => u.russWord)
+                .IsUnique();
+            builder.Entity<Adjective>()
                 .HasIndex(u => u.russWord)
                 .IsUnique();
         }

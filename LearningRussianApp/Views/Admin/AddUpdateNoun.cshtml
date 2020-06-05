@@ -5,19 +5,24 @@
 @{
 }
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
         <form asp-action="AddUpdateNoun">
             <input type="hidden" asp-for="id" />
             <div class="form-row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label asp-for="russWord" class="control-label"></label>
                     <input asp-for="russWord" class="form-control" />
                     <span asp-validation-for="russWord" class="text-danger"></span>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label asp-for="engWord" class="control-label"></label>
                     <input asp-for="engWord" class="form-control" />
                     <span asp-validation-for="engWord" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="gender" class="control-label"></label>
+                    <input asp-for="gender" class="form-control" />
+                    <span asp-validation-for="gender" class="text-danger"></span>
                 </div>
             </div>
             @*<div class="form-row">

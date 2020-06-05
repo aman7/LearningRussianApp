@@ -89,5 +89,40 @@ namespace LearningRussianApp.Controllers
             _methods.deleteVerb(id);
             return RedirectToAction(nameof(AllVerbs));
         }
+
+
+        public IActionResult AllAdjectives()
+        {
+            return View(_methods.GetAllAdjectives());
+        }
+
+
+        public IActionResult AddUpdateAdjective(int id)
+        {
+            if (id == 0)
+                return View(new Adjective());
+            else
+                return View(_methods.findAdjective(id));
+        }
+        [HttpPost]
+        public IActionResult AddUpdateAdjective(Adjective Adjective)
+        {
+            if (ModelState.IsValid)
+            {
+                if (Adjective.id == 0)
+                    _methods.AddAdjective(Adjective);
+                else
+                    _methods.updateAdjective(Adjective);
+            }
+            return RedirectToAction(nameof(AddUpdateAdjective));
+
+        }
+
+
+        public IActionResult DeleteAdjective(int id)
+        {
+            _methods.deleteAdjective(id);
+            return RedirectToAction(nameof(AllAdjectives));
+        }
     }
 }

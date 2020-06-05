@@ -95,5 +95,57 @@ namespace LearningRussianApp.Repository
                 Microsoft.EntityFrameworkCore.EntityState.Modified;
             _context.SaveChanges();
         }
+
+
+        public void AddAdjective(Adjective newAdjective)
+        {
+            _context.Adjectives.Add(newAdjective);
+            _context.SaveChanges();
+        }
+
+
+
+        public void deleteAdjective(int id)
+        {
+            var server = _context.Adjectives.Find(id);
+            _context.Adjectives.Remove(server);
+            _context.SaveChanges();
+        }
+
+
+
+        public Adjective findAdjective(int id)
+        {
+            return _context.Adjectives.FirstOrDefault(i => i.id == id);
+        }
+
+
+        public IEnumerable<Adjective> GetAllNonFinishedAdjectives()
+        {
+            return _context.Adjectives.Where(s => s.status != "Finished").ToList();
+        }
+
+
+        public IEnumerable<Adjective> GetAllAdjectives()
+        {
+            return _context.Adjectives.ToList();
+        }
+
+        public IEnumerable<Adjective> GetAllReviewAdjectives()
+        {
+            return _context.Adjectives.Where(s => s.status == "Finished" && s.reviewDate <= DateTime.Now).ToList();
+        }
+
+
+
+
+        public void updateAdjective(Adjective Adjective)
+        {
+            _context.Attach(Adjective).State =
+                Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _context.SaveChanges();
+        }
+
+
     }
 }

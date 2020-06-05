@@ -13,6 +13,7 @@ namespace LearningRussianApp.Models
         public int id { get; set; }
         public string engWord { get; set; }
         public string russWord { get; set; }
+        public string gender { get; set; }
         public string r1 { get; set; }
         public string r2 { get; set; }
         public string r3 { get; set; }
@@ -23,6 +24,7 @@ namespace LearningRussianApp.Models
         public string r8 { get; set; }
         public string r9 { get; set; }
         public string r10 { get; set; }
+        public string answer { get; set; }
         public string status { get; set; }
         public DateTime reviewDate { get; set; }
     }
